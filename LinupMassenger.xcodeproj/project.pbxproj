@@ -9,21 +9,31 @@
 /* Begin PBXBuildFile section */
 		C0F93C212996863E0046DD9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F93C202996863E0046DD9A /* AppDelegate.swift */; };
 		C0F93C232996863E0046DD9A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F93C222996863E0046DD9A /* SceneDelegate.swift */; };
-		C0F93C252996863E0046DD9A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F93C242996863E0046DD9A /* ViewController.swift */; };
+		C0F93C252996863E0046DD9A /* ConversationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F93C242996863E0046DD9A /* ConversationsVC.swift */; };
 		C0F93C282996863E0046DD9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0F93C262996863E0046DD9A /* Main.storyboard */; };
 		C0F93C2A2996863F0046DD9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0F93C292996863F0046DD9A /* Assets.xcassets */; };
 		C0F93C2D2996863F0046DD9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0F93C2B2996863F0046DD9A /* LaunchScreen.storyboard */; };
+		C0F93C3B2996A0620046DD9A /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F93C3A2996A0620046DD9A /* LoginVC.swift */; };
+		C0F93C3E2996A08D0046DD9A /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F93C3D2996A08D0046DD9A /* RegisterVC.swift */; };
+		C0F93C402996A0B20046DD9A /* PhotoViewerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F93C3F2996A0B20046DD9A /* PhotoViewerVC.swift */; };
+		C0F93C422996A0DF0046DD9A /* VideoPlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F93C412996A0DF0046DD9A /* VideoPlayerVC.swift */; };
+		C0F93C442996A11A0046DD9A /* NewConversationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F93C432996A11A0046DD9A /* NewConversationVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C0F93C1D2996863E0046DD9A /* LinupMassenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LinupMassenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0F93C202996863E0046DD9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0F93C222996863E0046DD9A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C0F93C242996863E0046DD9A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C0F93C242996863E0046DD9A /* ConversationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsVC.swift; sourceTree = "<group>"; };
 		C0F93C272996863E0046DD9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C0F93C292996863F0046DD9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C0F93C2C2996863F0046DD9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C0F93C2E2996863F0046DD9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0F93C3A2996A0620046DD9A /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		C0F93C3D2996A08D0046DD9A /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		C0F93C3F2996A0B20046DD9A /* PhotoViewerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerVC.swift; sourceTree = "<group>"; };
+		C0F93C412996A0DF0046DD9A /* VideoPlayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerVC.swift; sourceTree = "<group>"; };
+		C0F93C432996A11A0046DD9A /* NewConversationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +66,68 @@
 		C0F93C1F2996863E0046DD9A /* LinupMassenger */ = {
 			isa = PBXGroup;
 			children = (
-				C0F93C202996863E0046DD9A /* AppDelegate.swift */,
-				C0F93C222996863E0046DD9A /* SceneDelegate.swift */,
-				C0F93C242996863E0046DD9A /* ViewController.swift */,
-				C0F93C262996863E0046DD9A /* Main.storyboard */,
-				C0F93C292996863F0046DD9A /* Assets.xcassets */,
-				C0F93C2B2996863F0046DD9A /* LaunchScreen.storyboard */,
+				C0F93C3829969F7C0046DD9A /* Resources */,
+				C0F93C3729969F580046DD9A /* ViewModels */,
+				C0F93C3629969F430046DD9A /* Models */,
+				C0F93C3529969F3B0046DD9A /* Views */,
+				C0F93C3429969F370046DD9A /* Controllers */,
 				C0F93C2E2996863F0046DD9A /* Info.plist */,
 			);
 			path = LinupMassenger;
+			sourceTree = "<group>";
+		};
+		C0F93C3429969F370046DD9A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C0F93C242996863E0046DD9A /* ConversationsVC.swift */,
+				C0F93C3A2996A0620046DD9A /* LoginVC.swift */,
+				C0F93C3D2996A08D0046DD9A /* RegisterVC.swift */,
+				C0F93C3F2996A0B20046DD9A /* PhotoViewerVC.swift */,
+				C0F93C412996A0DF0046DD9A /* VideoPlayerVC.swift */,
+				C0F93C432996A11A0046DD9A /* NewConversationVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C0F93C3529969F3B0046DD9A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C0F93C3929969FAF0046DD9A /* Storyboards */,
+				C0F93C292996863F0046DD9A /* Assets.xcassets */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C0F93C3629969F430046DD9A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C0F93C3729969F580046DD9A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C0F93C3829969F7C0046DD9A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C0F93C202996863E0046DD9A /* AppDelegate.swift */,
+				C0F93C222996863E0046DD9A /* SceneDelegate.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C0F93C3929969FAF0046DD9A /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C0F93C262996863E0046DD9A /* Main.storyboard */,
+				C0F93C2B2996863F0046DD9A /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +201,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0F93C252996863E0046DD9A /* ViewController.swift in Sources */,
+				C0F93C442996A11A0046DD9A /* NewConversationVC.swift in Sources */,
+				C0F93C3B2996A0620046DD9A /* LoginVC.swift in Sources */,
+				C0F93C3E2996A08D0046DD9A /* RegisterVC.swift in Sources */,
+				C0F93C252996863E0046DD9A /* ConversationsVC.swift in Sources */,
+				C0F93C422996A0DF0046DD9A /* VideoPlayerVC.swift in Sources */,
 				C0F93C212996863E0046DD9A /* AppDelegate.swift in Sources */,
 				C0F93C232996863E0046DD9A /* SceneDelegate.swift in Sources */,
+				C0F93C402996A0B20046DD9A /* PhotoViewerVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
