@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C0B6786B299AD3D400BE26ED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0B6786A299AD3D400BE26ED /* GoogleService-Info.plist */; };
 		C0F93C212996863E0046DD9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F93C202996863E0046DD9A /* AppDelegate.swift */; };
 		C0F93C232996863E0046DD9A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F93C222996863E0046DD9A /* SceneDelegate.swift */; };
 		C0F93C252996863E0046DD9A /* ConversationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F93C242996863E0046DD9A /* ConversationsVC.swift */; };
@@ -19,9 +20,14 @@
 		C0F93C422996A0DF0046DD9A /* VideoPlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F93C412996A0DF0046DD9A /* VideoPlayerVC.swift */; };
 		C0F93C442996A11A0046DD9A /* NewConversationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F93C432996A11A0046DD9A /* NewConversationVC.swift */; };
 		C0F93C472997D35C0046DD9A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F93C462997D35C0046DD9A /* Extensions.swift */; };
+		D123568407F9E6E9279EBB2F /* Pods_LinupMassenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21B8531B39236C130A8FA0F6 /* Pods_LinupMassenger.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		21B8531B39236C130A8FA0F6 /* Pods_LinupMassenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LinupMassenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E3EE3D258157A70A1833A62 /* Pods-LinupMassenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LinupMassenger.debug.xcconfig"; path = "Target Support Files/Pods-LinupMassenger/Pods-LinupMassenger.debug.xcconfig"; sourceTree = "<group>"; };
+		927D1E08AEEFAE5DAB2308A5 /* Pods-LinupMassenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LinupMassenger.release.xcconfig"; path = "Target Support Files/Pods-LinupMassenger/Pods-LinupMassenger.release.xcconfig"; sourceTree = "<group>"; };
+		C0B6786A299AD3D400BE26ED /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C0F93C1D2996863E0046DD9A /* LinupMassenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LinupMassenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0F93C202996863E0046DD9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0F93C222996863E0046DD9A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,17 +49,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D123568407F9E6E9279EBB2F /* Pods_LinupMassenger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8185E36C8D7CAE053A31F99A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7E3EE3D258157A70A1833A62 /* Pods-LinupMassenger.debug.xcconfig */,
+				927D1E08AEEFAE5DAB2308A5 /* Pods-LinupMassenger.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		C0F93C142996863E0046DD9A = {
 			isa = PBXGroup;
 			children = (
 				C0F93C1F2996863E0046DD9A /* LinupMassenger */,
 				C0F93C1E2996863E0046DD9A /* Products */,
+				8185E36C8D7CAE053A31F99A /* Pods */,
+				EEAE8189D99FF71E3BC018D7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,6 +86,7 @@
 		C0F93C1F2996863E0046DD9A /* LinupMassenger */ = {
 			isa = PBXGroup;
 			children = (
+				C0B6786A299AD3D400BE26ED /* GoogleService-Info.plist */,
 				C0F93C3829969F7C0046DD9A /* Resources */,
 				C0F93C3729969F580046DD9A /* ViewModels */,
 				C0F93C3629969F430046DD9A /* Models */,
@@ -141,6 +160,14 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		EEAE8189D99FF71E3BC018D7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				21B8531B39236C130A8FA0F6 /* Pods_LinupMassenger.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -148,9 +175,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C0F93C312996863F0046DD9A /* Build configuration list for PBXNativeTarget "LinupMassenger" */;
 			buildPhases = (
+				8CC793298CA8C4BC25692547 /* [CP] Check Pods Manifest.lock */,
 				C0F93C192996863E0046DD9A /* Sources */,
 				C0F93C1A2996863E0046DD9A /* Frameworks */,
 				C0F93C1B2996863E0046DD9A /* Resources */,
+				4455CE0C2425EA7B3F4CC180 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -201,11 +230,54 @@
 			files = (
 				C0F93C2D2996863F0046DD9A /* LaunchScreen.storyboard in Resources */,
 				C0F93C2A2996863F0046DD9A /* Assets.xcassets in Resources */,
+				C0B6786B299AD3D400BE26ED /* GoogleService-Info.plist in Resources */,
 				C0F93C282996863E0046DD9A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4455CE0C2425EA7B3F4CC180 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LinupMassenger/Pods-LinupMassenger-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LinupMassenger/Pods-LinupMassenger-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LinupMassenger/Pods-LinupMassenger-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8CC793298CA8C4BC25692547 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LinupMassenger-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C0F93C192996863E0046DD9A /* Sources */ = {
@@ -362,6 +434,7 @@
 		};
 		C0F93C322996863F0046DD9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E3EE3D258157A70A1833A62 /* Pods-LinupMassenger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -390,6 +463,7 @@
 		};
 		C0F93C332996863F0046DD9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 927D1E08AEEFAE5DAB2308A5 /* Pods-LinupMassenger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

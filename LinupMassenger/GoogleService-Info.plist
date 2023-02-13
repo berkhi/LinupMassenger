@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>685358424902-naqr1q5vjs6ip493pcn7onnn116j5s1e.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.685358424902-naqr1q5vjs6ip493pcn7onnn116j5s1e</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB_yWeZs0HpI1SpWKUorB5MycAWXlks7V4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>685358424902</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>berkhayta.LinupMassenger</string>
+	<key>PROJECT_ID</key>
+	<string>linupmassenger</string>
+	<key>STORAGE_BUCKET</key>
+	<string>linupmassenger.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:685358424902:ios:a27ac8b9be2eb071883b47</string>
+</dict>
+</plist>

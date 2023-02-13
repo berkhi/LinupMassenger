@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class RegisterVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -151,7 +152,7 @@ class RegisterVC: UIViewController, UITextFieldDelegate, UIImagePickerController
               let lastName = lastNameField.text,
               let email = emailField.text,
               let password = passwordField.text,
-              !firstName.isEmpty, lastName.isEmpty, !email.isEmpty, !password.isEmpty
+              !firstName.isEmpty, !lastName.isEmpty, !email.isEmpty, !password.isEmpty
         else{
             alertUserLoginError()
             print("error")
@@ -165,6 +166,18 @@ class RegisterVC: UIViewController, UITextFieldDelegate, UIImagePickerController
             return
         }
         print("Success login button")
+        
+        //Firebase Log In
+        
+        FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password, completion: {authResult, error in
+            guard let result = authResult, error == nil else{
+                print("Error creating user")
+                return
+            }
+            let user = result.user
+            print("Created User: \(user)")
+        })
+        
     }
     
     func alertUserLoginError(){
