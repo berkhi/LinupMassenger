@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RegisterVC: UIViewController, UITextFieldDelegate {
+class RegisterVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -17,9 +17,12 @@ class RegisterVC: UIViewController, UITextFieldDelegate {
     
     private let imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "person")
+        imageView.image = UIImage(systemName: "person.circle")
         imageView.tintColor = .gray
         imageView.contentMode = .scaleAspectFit
+        imageView.layer.masksToBounds = true
+        imageView.layer.borderWidth = 2
+        imageView.layer.borderColor = UIColor.lightGray.cgColor
         return imageView
         
     }()
@@ -86,7 +89,7 @@ class RegisterVC: UIViewController, UITextFieldDelegate {
     
     private let registerButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Register *", for: .normal)
+        button.setTitle("Register", for: .normal)
         button.backgroundColor = .systemGreen
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 12
@@ -97,9 +100,7 @@ class RegisterVC: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Register"
         view.backgroundColor = .white
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Register", style: .done, target: self, action: #selector(didTapRegister))
         
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         view.addGestureRecognizer(gestureRecognizer)
@@ -125,7 +126,7 @@ class RegisterVC: UIViewController, UITextFieldDelegate {
     }
     
     @objc private func didTapChangePp(){
-        print("pp called")
+        photoActionSheet()
     }
     
     override func viewDidLayoutSubviews() {
@@ -133,6 +134,7 @@ class RegisterVC: UIViewController, UITextFieldDelegate {
         scrollView.frame = view.bounds
         let size = scrollView.width/3
         imageView.frame = CGRect(x: (scrollView.width-size)/2, y: (scrollView.width-size)/5, width: size, height: size)
+        imageView.layer.cornerRadius = imageView.width/2
         firstNameField.frame = CGRect(x: 30, y: imageView.bottom+10, width: scrollView.width-60, height: 52)
         lastNameField.frame = CGRect(x: 30, y: firstNameField.bottom+10, width: scrollView.width-60, height: 52)
         emailField.frame = CGRect(x: 30, y: lastNameField.bottom+10, width: scrollView.width-60, height: 52)
@@ -166,21 +168,19 @@ class RegisterVC: UIViewController, UITextFieldDelegate {
     }
     
     func alertUserLoginError(){
-        let alert = UIAlertController(title: "Login Failed", message: "Fields marked with '*' cannot be left blank. ", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Login Failed",
+                                      message: "Fields marked with '*' cannot be left blank. ",
+                                      preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel))
         self.present(alert, animated: true)
         
     }
     func alertUserLoginErrorPasswordLength(){
-        let alertPassword = UIAlertController(title: "Password Faild", message: "Password length must be at least 6 character", preferredStyle: .alert)
+        let alertPassword = UIAlertController(title: "Password Faild",
+                                              message: "Password length must be at least 6 character",
+                                              preferredStyle: .alert)
         alertPassword.addAction(UIAlertAction(title: "Dismiss", style: .cancel))
         self.present(alertPassword, animated: true)
-    }
-
-    @objc private func didTapRegister() {
-        let vc = RegisterVC()
-        vc.title = "Create Account"
-        navigationController?.pushViewController(vc, animated: true)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -195,5 +195,45 @@ class RegisterVC: UIViewController, UITextFieldDelegate {
     }
     @objc func hideKeyboard(){
         view.endEditing(true)
+    }
+    //Alert func for pp.
+    func photoActionSheet(){
+        let actionSheet = UIAlertController(title: "Profile Picture",
+                                            message: "How would you like to select your picture?",
+                                            preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "Cencel", style: .cancel))
+        actionSheet.addAction(UIAlertAction(title: "Take Photo", style: .default,
+                                            handler: {[weak self]_ in self?.presentCamera()}))
+        actionSheet.addAction(UIAlertAction(title: "Chose Photo", style: .default,
+                                            handler: {[weak self]_ in self?.presentPhotoPicker()}))
+        present(actionSheet, animated: true)
+    }
+    
+    func presentCamera(){
+        let vc = UIImagePickerController()
+        vc.sourceType = .camera
+        vc.delegate = self
+        vc.allowsEditing = true
+        present(vc, animated: true)
+    }
+    
+    func presentPhotoPicker(){
+        let vc = UIImagePickerController()
+        vc.sourceType = .photoLibrary
+        vc.delegate = self
+        vc.allowsEditing = true
+        present(vc, animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true)
+        guard let selectedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
+            return
+        }
+        self.imageView.image = selectedImage
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true)
     }
 }
