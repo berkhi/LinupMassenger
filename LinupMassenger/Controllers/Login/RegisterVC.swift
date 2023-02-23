@@ -7,8 +7,11 @@
 
 import UIKit
 import FirebaseAuth
+import JGProgressHUD
 
 class RegisterVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    private let spinner = JGProgressHUD(style: .dark)
     
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -167,22 +170,40 @@ class RegisterVC: UIViewController, UITextFieldDelegate, UIImagePickerController
         }
         print("Success login button")
         
+        spinner.show(in: view)
+        
         //Firebase Log In
         
-        FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password, completion: {authResult, error in
-            guard let result = authResult, error == nil else{
-                print("Error creating user")
+        DatabaseManager.shared.userExists(with: email, completion: { [weak self] exists in
+            guard let strongSelf = self else{
                 return
             }
-            let user = result.user
-            print("Created User: \(user)")
+            
+            DispatchQueue.main.async {
+                strongSelf.spinner.dismiss()
+            }
+            
+            guard !exists else{
+                //User already exists
+                strongSelf.alertUserLoginError(message: "Email address already exists.")
+                return
+            }
+            
+            FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password, completion: {authResult, error in
+                guard authResult != nil, error == nil else{
+                    print("Error creating user")
+                    return
+                }
+                DatabaseManager.shared.insertUser(with: AppUserInfo(firstName: firstName, lastName: lastName, emailAddress: email))
+                strongSelf.navigationController?.dismiss(animated: true)
+            })
         })
         
     }
     
-    func alertUserLoginError(){
+    func alertUserLoginError(message: String = "Fields marked with '*' cannot be left blank. "){
         let alert = UIAlertController(title: "Login Failed",
-                                      message: "Fields marked with '*' cannot be left blank. ",
+                                      message: message,
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel))
         self.present(alert, animated: true)
