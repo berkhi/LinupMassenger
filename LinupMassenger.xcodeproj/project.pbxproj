@@ -10,6 +10,7 @@
 		C005C47629A6C8370071FB9D /* GoogleSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C005C47429A665B50071FB9D /* GoogleSignIn.framework */; };
 		C00E3A8129A7C821008F1F88 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00E3A8029A7C821008F1F88 /* ChatVC.swift */; };
 		C0512F4E29A5144700F8CD04 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0512F4D29A5144700F8CD04 /* ProfileVC.swift */; };
+		C08F995D29AD5482006C89CD /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08F995C29AD5482006C89CD /* StorageManager.swift */; };
 		C0E12DAE299BBD5800B88371 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E12DAD299BBD5800B88371 /* DatabaseManager.swift */; };
 		C0E12DB0299BCAA100B88371 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0E12DAF299BCAA100B88371 /* GoogleService-Info.plist */; };
 		C0F93C212996863E0046DD9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F93C202996863E0046DD9A /* AppDelegate.swift */; };
@@ -34,6 +35,7 @@
 		C005C47429A665B50071FB9D /* GoogleSignIn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleSignIn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C00E3A8029A7C821008F1F88 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		C0512F4D29A5144700F8CD04 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		C08F995C29AD5482006C89CD /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		C0E12DAD299BBD5800B88371 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		C0E12DAF299BCAA100B88371 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C0F93C1D2996863E0046DD9A /* LinupMassenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LinupMassenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +152,7 @@
 				C0F93C222996863E0046DD9A /* SceneDelegate.swift */,
 				C0F93C462997D35C0046DD9A /* Extensions.swift */,
 				C0E12DAD299BBD5800B88371 /* DatabaseManager.swift */,
+				C08F995C29AD5482006C89CD /* StorageManager.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				C0F93C232996863E0046DD9A /* SceneDelegate.swift in Sources */,
 				C0512F4E29A5144700F8CD04 /* ProfileVC.swift in Sources */,
 				C0F93C402996A0B20046DD9A /* PhotoViewerVC.swift in Sources */,
+				C08F995D29AD5482006C89CD /* StorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

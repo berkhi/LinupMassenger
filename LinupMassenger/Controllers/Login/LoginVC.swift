@@ -134,6 +134,9 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                 return
             }
             let user = result.user
+            
+            UserDefaults.standard.set(email, forKey: "email")
+            
             print("Logged In User: \(user)")
             strongSelf.navigationController?.dismiss(animated: true)
         })

@@ -16,19 +16,33 @@ struct Message: MessageType {
     var kind: MessageKit.MessageKind
 }
 
-struct Sender: SenderType {
+struct Sender: MessageKit.SenderType {
     
     var photoURL: URL
     var senderId: String
     var displayName: String
 }
 
+
 class ChatVC: MessagesViewController, MessagesDataSource, MessagesLayoutDelegate, MessagesDisplayDelegate {
 
     private var messages = [Message]()
-    private let selfSender = Sender(photoURL: "",
+    
+    let photoURL = URL(string: "https://iso.500px.com/wp-content/uploads/2016/03/stock-photo-142984111.jpg")
+    /*private let selfSender = Sender(photoURL: photourl!,
                                     senderId: "1",
-                                    displayName: "Mark Thin")
+                                    displayName: "Mark Thin")*/
+    
+    private var selfSender: Sender
+
+    init() {
+        selfSender = Sender(photoURL: photoURL!, senderId: "1", displayName: "Mark Thin")
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
